@@ -60,6 +60,13 @@ public class QuestionsTypeApiImpl  implements QuestionsTypeApi {
 
     @Override
     public List<QuestionsTypeBean> getQuestionsTypeList(int startIndex, int endIndex) throws GenericBusinessException {
+        if (startIndex < 1) {
+            startIndex = 1;
+        }
+        if (endIndex - startIndex < 0) {
+            return new ArrayList<>();
+        }
+        
         QuestionsTypeService questionsTypeService = new QuestionsTypeService();
         List list1 = questionsTypeService.getQuestionsTypeList(startIndex, endIndex);
         List<QuestionsTypeBean>list = new ArrayList<>();

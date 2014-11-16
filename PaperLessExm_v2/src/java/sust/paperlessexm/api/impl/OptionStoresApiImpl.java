@@ -52,6 +52,12 @@ public class OptionStoresApiImpl implements OptionsStoresApi {
 
     @Override
     public List<OptionsStoresBean> getOptionsStoresList(int startIndex, int endIndex) throws GenericBusinessException {
+        if (startIndex < 1) {
+            startIndex = 1;
+        }
+        if (endIndex - startIndex < 0) {
+            return new ArrayList<>();
+        }
         OptionsStoresService optionsStoresService = new OptionsStoresService();
         List list1 = optionsStoresService.getOptionsStoresList(startIndex, endIndex);
         List<OptionsStoresBean>list=new ArrayList<>();

@@ -59,6 +59,13 @@ public class CourseRegistrationApiImpl implements CourseRegistrationApi{
 
     @Override
     public List<CourseRegistrationBean> getCourseRegistrationList(int startIndex, int endIndex) throws GenericBusinessException {
+        if (startIndex < 1) {
+            startIndex = 1;
+        }
+        if (endIndex - startIndex < 0) {
+            return new ArrayList<>();
+        }
+        
         CourseRegistrationService courseRegistrationService = new CourseRegistrationService();
         List<CourseRegistrationBean> list = new ArrayList();
         List list1 = courseRegistrationService.getCourseRegistrationList(startIndex, endIndex);

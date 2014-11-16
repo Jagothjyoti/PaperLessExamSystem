@@ -63,6 +63,13 @@ public class TestApiImpl implements TestApi {
 
     @Override
     public List<TestBean> getTestList(int startIndex, int endIndex) throws GenericBusinessException {
+        if (startIndex < 1) {
+            startIndex = 1;
+        }
+        if (endIndex - startIndex < 0) {
+            return new ArrayList<>();
+        }
+        
         TestService testService = new TestService();
         List list1 = testService.getTestList(startIndex, endIndex);
         List<TestBean>list = new ArrayList<>();
