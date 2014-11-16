@@ -1,51 +1,33 @@
 package sust.paperlessexm.api;
 
+import java.util.List;
+import sust.paperlessexm.bean.OptionsStoresBean;
 import sust.paperlessexm.entity.OptionsStores;
 import sust.paperlessexm.entity.Questions;
 
-/**
- *
- * @author Sm19
- */
-public class OptionsStoresApi {
 
-    private Integer optionsStoresId;
-    private String optionsText;
-    private Questions questionsId;
+public interface OptionsStoresApi {
+    void addOptionsStores(OptionsStoresBean model) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public OptionsStoresApi(Integer optionsStoresId, String optionsText, Questions questionsId) {
-        this.optionsStoresId = optionsStoresId;
-        this.optionsText = optionsText;
-        this.questionsId = questionsId;
-    }
+  
+   void saveOptionsStores(OptionsStoresBean model) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public OptionsStoresApi(OptionsStores optionsStores) {
-        this.optionsStoresId = optionsStores.getOptionsStoresId();
-        this.optionsText = optionsStores.getOptionsText();
-        this.questionsId = optionsStores.getQuestionsId();
-    }
+   void deleteOptionsStores(java.lang.Integer id) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public Integer getOptionsStoresId() {
-        return optionsStoresId;
-    }
+   OptionsStoresBean getOptionsStores(java.lang.Integer id) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public void setOptionsStoresId(Integer optionsStoresId) {
-        this.optionsStoresId = optionsStoresId;
-    }
+   List<OptionsStoresBean> getOptionsStoresList() throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public String getOptionsText() {
-        return optionsText;
-    }
+   
+   List<OptionsStoresBean> getOptionsStoresList(int startIndex, int endIndex) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public void setOptionsText(String optionsText) {
-        this.optionsText = optionsText;
-    }
+   int getOptionsStoresListSize() throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public Questions getQuestionsId() {
-        return questionsId;
-    }
+   
+   List<OptionsStoresBean> findOptionsStoresByOptionsStoresId(java.lang.Integer optionsStoresId) throws sust.paperlessexm.exception.GenericBusinessException;
+ 
+   List<OptionsStoresBean> findOptionsStoresByOptionsText(java.lang.String optionsText) throws sust.paperlessexm.exception.GenericBusinessException;
+    
+   List<OptionsStoresBean> findOptionsStoresByQuestionsId(java.lang.Integer questionsId) throws sust.paperlessexm.exception.GenericBusinessException;
 
-    public void setQuestionsId(Questions questionsId) {
-        this.questionsId = questionsId;
-    }
 }
