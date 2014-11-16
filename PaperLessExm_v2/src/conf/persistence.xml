@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="PaperLessExm_v2PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>sust.paperlessexm.entity.OptionsStores</class>
+    <class>sust.paperlessexm.entity.Questions</class>
+    <class>sust.paperlessexm.entity.QuestionsType</class>
+    <class>sust.paperlessexm.entity.Teaches</class>
+    <class>sust.paperlessexm.entity.Teachers</class>
+    <class>sust.paperlessexm.entity.Test</class>
+    <class>sust.paperlessexm.entity.Course</class>
+    <class>sust.paperlessexm.entity.Student</class>
+    <class>sust.paperlessexm.entity.QuestionsAns</class>
+    <class>sust.paperlessexm.entity.Department</class>
+    <class>sust.paperlessexm.entity.TestRegistration</class>
+    <class>sust.paperlessexm.entity.CourseRegistration</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/paperlessexm?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="sust"/>
+    </properties>
+  </persistence-unit>
+</persistence>

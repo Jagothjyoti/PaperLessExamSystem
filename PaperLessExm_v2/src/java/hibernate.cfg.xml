@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/paperlessexm?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">sust</property>
+    
+    
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
+        
+        
+        <mapping class="sust.paperlessexm.entity.Course"/>
+        <mapping class="sust.paperlessexm.entity.CourseRegistration"/>
+        <mapping class="sust.paperlessexm.entity.Department"/>
+        <mapping class="sust.paperlessexm.entity.OptionsStores"/>
+        <mapping class="sust.paperlessexm.entity.Questions"/>
+        <mapping class="sust.paperlessexm.entity.QuestionsAns"/>
+        <mapping class="sust.paperlessexm.entity.QuestionsType"/>
+        <mapping class="sust.paperlessexm.entity.Student"/>
+        <mapping class="sust.paperlessexm.entity.Teachers"/>
+        <mapping class="sust.paperlessexm.entity.Teaches"/>
+        <mapping class="sust.paperlessexm.entity.Test"/>
+        <mapping class="sust.paperlessexm.entity.TestRegistration"/>
+    </session-factory>
+</hibernate-configuration>
